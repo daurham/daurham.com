@@ -1,7 +1,7 @@
 {
-  "name": "FILL_ME_IN",
+  "name": "daurham.com",
   "version": "1.0.0",
-  "description": "FILL_ME_IN",
+  "description": "The codebase to daurham.com",
   "scripts": {
     "start": "webpack -w",
     "server": "nodemon server/index.js",
@@ -15,9 +15,9 @@
   "author": "daurham",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/daurham/FILL_ME_IN/issues"
+    "url": "https://github.com/daurham/daurham.com/issues"
   },
-  "homepage": "https://github.com/daurham/FILL_ME_IN#readme",
+  "homepage": "https://github.com/daurham/daurham.com#readme",
   "dependencies": {
     "axios": "^0.27.2",
     "bluebird": "^3.7.2",
