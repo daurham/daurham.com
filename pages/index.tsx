@@ -37,12 +37,12 @@ export default function Home() {
       <main className=" bg-white px-10 md:px-20 lg:px-40 dark:bg-slate-900">
         <section className=" min-h-screen">
           <nav className=" py-10 mb-12 flex justify-between">
-            <h1 className=" text-xl font-extrabold dark:text-moon">Daurham</h1>
+            <h1 className=" text-xl font-extrabold dark:text-moonl">Daurham</h1>
             <ul className=" flex items-center">
               <li>
                 <BsFillMoonStarsFill
                   onClick={() => setDarkMode(!darkMode)}
-                  className=" cursor-pointer text-2xl dark:text-moon"
+                  className=" cursor-pointer text-2xl dark:text-moonl"
                 />
               </li>
               <li>
@@ -61,7 +61,7 @@ export default function Home() {
             <h2 className=" text-5xl py2 text-teal-600 font-medium md:text-6xl">
               Jake Daurham
             </h2>
-            <h3 className=" text-2xl py2 text-slate-500 md:text-3xl">
+            <h3 className=" text-2xl py2  text-slate-500 md:text-3xl overline mt-3">
               Software Engineer | Artist
             </h3>
             <p className="text-md py5 leading-8 text-slate-700 md:text-xl max-w-md mx-auto">
@@ -69,7 +69,7 @@ export default function Home() {
               <InlineTxt darkMode={darkMode} text="Create" /> a better one.
             </p>
           </div>
-          <div className="text-5xl flex justify-center gap-16 py-3 text-slate-700">
+          <div className="text-5xl flex justify-center gap-5 py-3 text-slate-700 md:gap-16 dark:text-slate-400">
             <a
               href="https://instagram.com/captain_daurham"
               target="_blank"
@@ -114,18 +114,20 @@ export default function Home() {
         {/* Second Page */}
         <section>
           <div>
-            <h3 className="text-3xl py-1 dark:text-slate-300">Portfolio</h3>
+            <h3 className="text-3xl py-1 text-center mt-10 dark:text-slate-300">
+              Portfolio
+            </h3>
             {/* <h3 className="text-3xl py-1 dark:text-slate-300">What am I</h3> */}
             {/* <p className="text-md py5 leading-8 text-slate-700 dark:text-slate-500"></p> */}
-            <p className="text-md py5 indent-5 leading-8 text-slate-700 dark:text-slate-500">
+            <p className="text-md py5 text-center leading-8 text-slate-700 dark:text-slate-500">
               I've spent the last {getYearsOfJourney()} years of my life as a
               project specialist in design, the last{" "}
               {Number(getYearsOfJourney()) - 4} taking on commissions for my
               work and the last {new Date().getFullYear() - 2020} years
               averaging 12+ hours a day into programming.
             </p>
-            <p className="text-md py5 indent-5 leading-8 text-slate-700 dark:text-slate-500">
-              My work shows a willingness to{" "}
+            <p className="text-md py5 text-center leading-8 text-slate-700 dark:text-slate-500">
+              <span className="text-2xl ">My work</span> shows a willingness to{" "}
               <InlineTxt text="experiment" darkMode={darkMode} /> outside my
               comfort zone, <InlineTxt text="learn" darkMode={darkMode} /> new
               technologies and <InlineTxt text="innovate" darkMode={darkMode} />{" "}
@@ -238,36 +240,41 @@ export default function Home() {
                 >
                 <AiFillGithub />
               </a> */}
-
+              <p className=" text-center text-lg text-slate-700 dark:text-slate-400">
+                Check Out My Software Projects
+              </p>
               <a
-                className=" text-center text-lg"
+                className=" text-center text-2xl"
                 href="https://github.com/daurham"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Check Out My Software Projects  <InlineTxt text="HERE" darkMode={darkMode} />
+                <InlineTxt text="HERE" darkMode={darkMode} />
               </a>
             </div>
-            <div className="basis-1/3 flex-1 text-center">
+            <div className="basis-1/3 flex-1 text-center md:flex">
               {/*         <a
               <AiFillInstagram /> 
               >
               </a>
                 */}
+              <p className=" text-center text-lg text-slate-700 dark:text-slate-400">
+                Check Out My Design Projects
+              </p>
               <a
-                className=" text-center text-lg"
+                className=" text-center text-2xl"
                 href="https://instagram.com/captain_daurham"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Check Out My Design Projects <InlineTxt text="HERE" darkMode={darkMode} />
+                <InlineTxt text="HERE" darkMode={darkMode} />
               </a>
             </div>
             {/* <div className="basis-1/3 flex-1"> */}
-              {/* <Image */}
-              {/* <img */}
-                 {/* src={piroutineGif} */}
-                {/* // src="https://media.giphy.com/media/sfz6S74HqraQRCemlz/giphy.gif"
+            {/* <Image */}
+            {/* <img */}
+            {/* src={piroutineGif} */}
+            {/* // src="https://media.giphy.com/media/sfz6S74HqraQRCemlz/giphy.gif"
                 // src="https://media.giphy.com/media/sfz6S74HqraQRCemlz/giphy.mp4"
                 // className=" rounded-lg object-cover w-100 h-100"
                 // className=" rounded-lg object-cover"
@@ -275,7 +282,7 @@ export default function Home() {
                 // height={"100"}
                 // layout="responsive"
                 // alt={"project"} */}
-              {/* /> */}
+            {/* /> */}
             {/* </div> */}
             {/* SDC */}
             {/* <div className="basis-1/3 flex-1">

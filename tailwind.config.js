@@ -8,7 +8,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        moon: "#4a4622",
+        moond: "#4a4622",
+        moonl: "#bdac65",
       },
       // For adding my own fonts / colors / etc.
     },
