@@ -234,12 +234,7 @@ export default function Home() {
             {/* </p> */}
           </div>
           <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
-            <div className="basis-1/3 flex-1 text-center">
-              {/* <a
-                className=" text-center text-lg items-center"
-                >
-                <AiFillGithub />
-              </a> */}
+            <div className="basis-1/3 flex-1 text-center md:flex flex-col">
               <p className=" text-center text-lg text-slate-700 dark:text-slate-400">
                 Check Out My Software Projects
               </p>
@@ -252,12 +247,7 @@ export default function Home() {
                 <InlineTxt text="HERE" darkMode={darkMode} />
               </a>
             </div>
-            <div className="basis-1/3 flex-1 text-center md:flex">
-              {/*         <a
-              <AiFillInstagram /> 
-              >
-              </a>
-                */}
+            <div className="basis-1/3 flex-1 text-center md:flex flex-col">
               <p className=" text-center text-lg text-slate-700 dark:text-slate-400">
                 Check Out My Design Projects
               </p>
