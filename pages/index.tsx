@@ -10,9 +10,46 @@ import {
   AiFillYoutube,
 } from "react-icons/ai";
 import jake from "../public/jacob_daurham.png";
-import piroutinePage from "../public/piroutine_page.png";
-import piroutineGithub from "../public/piroutine_github.png";
-import piroutineGif from "../public/piroutine_sq_gif.gif";
+import { Projects, ProjectProps } from "./projects";
+
+const ProjectList = ({ projects }: ProjectProps) => (
+  <>
+    {projects.map(({ id, title, desc, devPos, link, img, deployed, website }) => (
+      <div
+        key={id}
+        className="basis-1/3 flex-1 shadow-2xl bg-slate-800 rounded-xl"
+      >
+        <div className="flex flex-col justify-center border-b">
+          <h2 className=" text-center py-2 text-3xl text-moonl">{title}</h2>
+          {deployed && (
+            <a
+              className="text-sm text-center absolute ml-3 bg-gradient-to-r from-cyan-600 to-teal-800 px-2 py-1 rounded-md text-white"
+              // className="text-sm text-center absolute ml-3 bg-gradient-to-r from-teal-800 to-moond px-2 py-1 rounded-md  mb-1 shadow-[0_4px_0_rgb(0,0,0)] hover:shadow-[0_0px_0px_rgb(0,0,0)] text-white ease-out hover:translate-y-1 transition-all"
+              href={website}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Deployed
+            </a>
+          )}
+        </div>
+
+        <span className="flex justify-between my-2">
+          <h3 className=" ml-5 text-slate-200">{desc}</h3>
+          <h3 className=" mr-5 text-slate-200">{devPos}</h3>
+        </span>
+        <a href={link} target="_blank" rel="noopener noreferrer">
+          <Image
+            src={img}
+            className=" rounded-br-full mb-5 shadow-[0_9px_0_rgb(0,0,0)] hover:shadow-[0_4px_0px_rgb(0,0,0)] text-black bg-white ease-out hover:translate-y-1 transition-all rounded"
+            layout="responsive"
+            alt={"project"}
+          />
+        </a>
+      </div>
+    ))}
+  </>
+);
 
 const InlineTxt = ({ text, darkMode }: { text: string; darkMode: boolean }) =>
   darkMode ? (
@@ -47,7 +84,7 @@ export default function Home() {
               </li>
               <li>
                 <a
-                  className=" bg-gradient-to-r from-cyan-500 to-teal-800 text-white px-4 py-2 rounded-md ml-8"
+                  className=" bg-gradient-to-r from-cyan-600 to-teal-800 text-white px-4 py-2 rounded-md ml-8 "
                   href="https://docs.google.com/document/d/1BuWNK6pHv0wWnTUAfriOv46RL_x6LvSkpYA3HpRpqbs/edit?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -120,10 +157,10 @@ export default function Home() {
             {/* <h3 className="text-3xl py-1 dark:text-slate-300">What am I</h3> */}
             {/* <p className="text-md py5 leading-8 text-slate-700 dark:text-slate-500"></p> */}
             <p className="text-md py5 text-center leading-8 text-slate-700 dark:text-slate-500">
-              I've spent the last {getYearsOfJourney()} years of my life as a
+            I&apos;ve spent the last {getYearsOfJourney()} years of my life as a
               project specialist in design, the last{" "}
-              {Number(getYearsOfJourney()) - 4} taking on commissions for my
-              work and the last {new Date().getFullYear() - 2020} years
+              {Number(getYearsOfJourney()) - 4} years taking on commissions for
+              my work and the last {new Date().getFullYear() - 2020} years
               averaging 12+ hours a day into programming.
             </p>
             <p className="text-md py5 text-center leading-8 text-slate-700 dark:text-slate-500">
@@ -223,101 +260,9 @@ export default function Home() {
         {/* SECTION 3 */}
         {/* PORTFOLIO */}
         <section>
-          <div>
-            {/* <h3 className="text-3xl py-1 dark:text-slate-300">Portfolio</h3>
-            <p className="text-md py5 text-center leading-8 text-slate-500"> */}
-            {/* My work shows a willingness to{" "}
-              <InlineTxt text="experiment" darkMode={darkMode} /> outside my
-              comfort zone, <InlineTxt text="learn" darkMode={darkMode} /> new
-              technologies and <InlineTxt text="innovate" darkMode={darkMode} />{" "}
-              abstract solutions. */}
-            {/* </p> */}
-          </div>
           <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
-            <div className="basis-1/3 flex-1 text-center md:flex flex-col">
-              <p className=" text-center text-lg text-slate-700 dark:text-slate-400">
-                Check Out My Software Projects
-              </p>
-              <a
-                className=" text-center text-2xl"
-                href="https://github.com/daurham"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <InlineTxt text="HERE" darkMode={darkMode} />
-              </a>
-            </div>
-            <div className="basis-1/3 flex-1 text-center md:flex flex-col">
-              <p className=" text-center text-lg text-slate-700 dark:text-slate-400">
-                Check Out My Design Projects
-              </p>
-              <a
-                className=" text-center text-2xl"
-                href="https://instagram.com/captain_daurham"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <InlineTxt text="HERE" darkMode={darkMode} />
-              </a>
-            </div>
-            {/* <div className="basis-1/3 flex-1"> */}
-            {/* <Image */}
-            {/* <img */}
-            {/* src={piroutineGif} */}
-            {/* // src="https://media.giphy.com/media/sfz6S74HqraQRCemlz/giphy.gif"
-                // src="https://media.giphy.com/media/sfz6S74HqraQRCemlz/giphy.mp4"
-                // className=" rounded-lg object-cover w-100 h-100"
-                // className=" rounded-lg object-cover"
-                // width={"100"}
-                // height={"100"}
-                // layout="responsive"
-                // alt={"project"} */}
-            {/* /> */}
-            {/* </div> */}
-            {/* SDC */}
-            {/* <div className="basis-1/3 flex-1">
-              <Image
-                src={piroutineGithub}
-                className=" rounded-lg object-cover"
-                width={"100"}
-                height={"100"}
-                layout="responsive"
-                alt={"project"}
-              />
-            </div> */}
-            {/* FEC */}
-            {/* <div className="basis-1/3 flex-1">
-              <Image
-                src={piroutinePage}
-                className=" rounded-lg object-cover"
-                width={"100%"}
-                height={"100%"}
-                layout="responsive"
-                alt={"project"}
-              />
-            </div> */}
-            {/* TIMER */}
-            {/* <div className="basis-1/3 flex-1">
-              <Image
-                src={piroutineGithub}
-                className=" rounded-lg object-cover"
-                width={"100%"}
-                height={"100%"}
-                layout="responsive"
-                alt={"project"}
-              />
-            </div> */}
-            {/* Blue Ocean */}
-            {/* <div className="basis-1/3 flex-1">
-              <Image
-                src={piroutinePage}
-                className=" rounded-lg object-cover"
-                width={"100%"}
-                height={"100%"}
-                layout="responsive"
-                alt={"project"}
-              />
-            </div> */}
+
+            <ProjectList projects={Projects} />
           </div>
         </section>
       </main>
