@@ -10,7 +10,7 @@ import {
   AiFillYoutube,
 } from "react-icons/ai";
 import jake from "../public/jacob_daurham.png";
-import { Projects, ProjectProps } from "./projects";
+import { Projects, ProjectProps } from "../public/projects";
 
 const ProjectList = ({ projects }: ProjectProps) => (
   <>

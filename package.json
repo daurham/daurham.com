@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "codemod": "npx @next/codemod@latest",
     "build-css": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
   },
   "dependencies": {
@@ -14,6 +15,7 @@
     "@emotion/styled": "^11.10.5",
     "@mui/icons-material": "^5.10.16",
     "@mui/material": "^5.10.16",
+    "@next/codemod": "^13.0.6",
     "@types/node": "18.11.9",
     "@types/react": "18.0.25",
     "@types/react-dom": "18.0.9",
@@ -24,6 +26,7 @@
     "react-dom": "18.2.0",
     "react-icons": "^4.7.1",
     "react-query": "^3.39.2",
+    "sharp": "^0.31.2",
     "typescript": "4.9.3"
   },
   "devDependencies": {
