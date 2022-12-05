@@ -74,8 +74,8 @@ export default function Home() {
       <main className=" bg-white px-10 md:px-20 lg:px-40 dark:bg-slate-900">
         <section className=" min-h-screen">
           <nav className=" py-10 mb-12 flex justify-between">
-            <h1 className=" text-xl font-extrabold dark:text-moonl">Daurham</h1>
-            <ul className=" flex items-center">
+            <h1 className=" text-black text-xl font-extrabold dark:text-moonl">Daurham</h1>
+            <ul className="text-black flex items-center">
               <li>
                 <BsFillMoonStarsFill
                   onClick={() => setDarkMode(!darkMode)}
@@ -151,7 +151,7 @@ export default function Home() {
         {/* Second Page */}
         <section>
           <div>
-            <h3 className="text-3xl py-1 text-center mt-10 dark:text-slate-300">
+            <h3 className="text-black text-3xl py-1 text-center mt-10 dark:text-slate-300">
               Portfolio
             </h3>
             {/* <h3 className="text-3xl py-1 dark:text-slate-300">What am I</h3> */}
