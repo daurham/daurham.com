@@ -93,6 +93,6 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ---
 
-<div align="center">
-Made with ❤️ by [Jacob Daurham](https://github.com/daurham)
-</div>
+<p align="center">
+Made with ❤️ by <a href="https://github.com/daurham">Jacob Daurham</a>
+</p>
