@@ -1,9 +1,12 @@
 
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
-import { avatarFallback, name, secondaryPortraitPath, skills, careerTitle, shortName } from '@/constant.config';
+import { avatarFallback, name, secondaryPortraitPath, skills, careerTitleShort, shortName } from '@/constant.config';
+
+const InlineTxt = ({ text }: { text: string; }) => (<span className=" text-regal-blue dark:text-moonglow">{text}</span>);
+
 
 const About = () => {
-
+  const getYearsOfJourney = () => String(new Date().getFullYear() - 2009);
   return (
     <section id="about" className="py-20 px-6">
       <div className="max-w-6xl mx-auto">
@@ -31,23 +34,18 @@ const About = () => {
               </Avatar>
               <div>
                 <h3 className="text-xl md:text-2xl font-semibold mb-2">{shortName}</h3>
-                <p className="text-foreground/60">{careerTitle}</p>
+                <p className="text-foreground/60">{careerTitleShort}</p>
               </div>
             </div>
             
             <p className="text-lg text-foreground/80 leading-relaxed">
-              I'm a passionate software engineer with a love for creating efficient, scalable solutions. 
-              My journey in tech has led me through various projects where I've honed my skills in 
-              full-stack development, problem-solving, and collaborative teamwork.
+              For {getYearsOfJourney()} years, I&apos;ve thrived as a <InlineTxt text="design specialist" />, with {Number(getYearsOfJourney()) - 4} years of commissioned freelance work and the last {new Date().getFullYear() - 2019} years diving deep into programming—often spending 12+ hours a day mastering my craft.
             </p>
             <p className="text-lg text-foreground/80 leading-relaxed">
-              I believe in writing clean, maintainable code and staying up-to-date with the latest 
-              technologies. When I'm not coding, you can find me exploring new frameworks, 
-              contributing to open-source projects, or planning my next development adventure.
+              Now, as a passionate software engineer, I focus on building efficient, scalable solutions with clean, maintainable code. My journey spans full-stack development, problem-solving, and collaborative teamwork, always driven by curiosity and precision.
             </p>
             <p className="text-lg text-foreground/80 leading-relaxed">
-              Currently, I'm actively seeking new opportunities where I can contribute my skills 
-              and continue growing as a developer in a dynamic, forward-thinking team.
+              I stay on the cutting edge of technology, whether exploring new frameworks, contributing to open-source projects, or planning my next technical challenge. Currently, I&apos;m seeking new opportunities where I can apply my expertise, learn from a dynamic team, and grow as a developer.  
             </p>
           </div>
           

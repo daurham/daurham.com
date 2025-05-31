@@ -3,7 +3,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { ArrowDown } from 'lucide-react';
 import { 
   avatarFallback,
-  careerTitle,
+  careerTitleLong,
   githubLink,
   headerDescription,
   headerName,
@@ -32,11 +32,10 @@ const Hero = () => {
   return (
     <section className="min-h-screen flex items-center justify-center relative px-6">
       <div className="max-w-4xl mx-auto text-center">
-        <div className="animate-fade-in flex flex-col items-center justify-center">
+        <div className="animate-fade-in flex flex-col items-center justify-center mt-12">
 
           {/* Name */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-2">
-            {/* <span className="bg-gradient-to-r from-slate-500 via-moonglow to-slate-500 bg-clip-text text-transparent"> */}
             <span className="bg-slate-600 bg-clip-text text-transparent dark:text-moonglow">
               {headerName}
             </span>
@@ -44,7 +43,7 @@ const Hero = () => {
 
             {/* CareerTitle */}
             <h2 className="text-xl md:text-2xl lg:text-3xl text-foreground/80 mb-4 overline">
-              {careerTitle}
+              {careerTitleLong}
             </h2>
 
           {/* Main Portrait */}

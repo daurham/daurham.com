@@ -1,27 +1,9 @@
-
+import { posts } from '@/blog';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from './ui/button';
 
 const Blog = () => {
-  const posts = [
-    {
-      title: "Currently Learning: Advanced React Patterns",
-      date: "December 2024",
-      description: "Diving deep into compound components, render props, and custom hooks to build more reusable and maintainable React applications.",
-      category: "Learning"
-    },
-    {
-      title: "Building My Portfolio Website",
-      date: "December 2024",
-      description: "Creating a modern, responsive portfolio using React, TypeScript, and Tailwind CSS. Focusing on performance and accessibility.",
-      category: "Project"
-    },
-    {
-      title: "Job Search Journey Begins",
-      date: "December 2024",
-      description: "Starting my search for exciting software engineering opportunities. Looking forward to contributing to innovative projects and growing with a great team.",
-      category: "Career"
-    }
-  ];
+
 
   return (
     <section id="blog" className="py-20 px-6">
@@ -34,9 +16,10 @@ const Blog = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <div className="flex flex-wrap justify-center gap-8">
           {posts.map((post, index) => (
-            <Card key={post.title} className="hover:shadow-md transition-shadow">
+            <Card key={post.title} className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] flex flex-col">
               <CardHeader>
                 <div className="flex items-center justify-between mb-2">
                   <span className="px-2 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 text-xs rounded-md">
@@ -44,10 +27,23 @@ const Blog = () => {
                   </span>
                   <span className="text-sm text-foreground/60">{post.date}</span>
                 </div>
-                <CardTitle className="text-lg">{post.title}</CardTitle>
+                <CardTitle className="text-lg dark:group-hover:text-moonglow">{post.title}</CardTitle>
               </CardHeader>
-              <CardContent>
-                <CardDescription>{post.description}</CardDescription>
+              <CardContent className="flex flex-col flex-grow">
+                <CardDescription className="flex-grow">{post.description}</CardDescription>
+
+                <div className="flex gap-3 mt-4">
+                  {post.blogUrl && (
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => window.open(post.blogUrl, '_blank')}
+                    className="flex-1"
+                  >
+                    Read More
+                  </Button>
+                  )}
+                </div>
               </CardContent>
             </Card>
           ))}

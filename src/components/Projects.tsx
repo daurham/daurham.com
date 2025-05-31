@@ -1,4 +1,3 @@
-
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { githubLink, githubReposLink, projects } from '@/constant.config';
@@ -16,9 +15,9 @@ const Projects = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="flex flex-wrap justify-center gap-8">
           {projects.map((project, index) => (
-            <Card key={project.title} className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+            <Card key={project.title} className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] flex flex-col">
               <CardHeader>
                 <CardTitle className="group-hover:text-blue-600 transition-colors dark:group-hover:text-moonglow">
                   {project.title}
@@ -27,7 +26,7 @@ const Projects = () => {
                   {project.description}
                 </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-4">
+              <CardContent className="flex flex-col flex-grow">
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech) => (
                     <span
@@ -38,7 +37,7 @@ const Projects = () => {
                     </span>
                   ))}
                 </div>
-                <div className="flex gap-3">
+                <div className="flex gap-3 mt-auto pt-4">
                   {project.isLive && (
                   <Button
                     variant="outline"

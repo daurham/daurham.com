@@ -42,12 +42,12 @@ const Navigation = ({ theme, toggleTheme }: NavigationProps) => {
             >
               Projects
             </button>
-            <button
+            {/* <button
               onClick={() => scrollToSection('blog')}
               className="text-foreground/80 hover:text-foreground transition-colors"
             >
               Updates
-            </button>
+            </button> */}
             
             <div className="flex items-center space-x-4">
               <Button
@@ -108,12 +108,12 @@ const Navigation = ({ theme, toggleTheme }: NavigationProps) => {
               >
                 Projects
               </button>
-              <button
+              {/* <button
                 onClick={() => scrollToSection('blog')}
                 className="text-left text-foreground/80 hover:text-foreground transition-colors"
               >
                 Updates
-              </button>
+              </button> */}
               <Button
                 variant="outline"
                 size="sm"
