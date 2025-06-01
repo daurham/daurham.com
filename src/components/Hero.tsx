@@ -32,8 +32,6 @@ const Hero = () => {
     }
   };
 
-  console.log("isMobile", isMobile);
-
   return (
     <section className="min-h-screen flex items-center justify-center relative px-6 pb-20">
       <div className="max-w-4xl mx-auto text-center">
@@ -129,9 +127,11 @@ const Hero = () => {
         </div>
         </div>
       </div>
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <ArrowDown className="w-6 h-6 text-foreground/40" />
-      </div>
+      {!isMobile && (
+        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <ArrowDown className="w-6 h-6 text-foreground/40" />
+        </div>
+      )}
     </section>
   );
 };
