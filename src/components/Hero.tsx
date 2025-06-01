@@ -32,7 +32,7 @@ const Hero = () => {
   return (
     <section className="min-h-screen flex items-center justify-center relative px-6">
       <div className="max-w-4xl mx-auto text-center">
-        <div className="animate-fade-in flex flex-col items-center justify-center mt-12">
+        <div className="animate-fade-in flex flex-col items-center justify-center mt-20">
 
           {/* Name */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-2">
