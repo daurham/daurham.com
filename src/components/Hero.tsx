@@ -4,6 +4,7 @@ import { ArrowDown } from 'lucide-react';
 import { 
   avatarFallback,
   careerTitleLong,
+  careerTitleShort,
   githubLink,
   headerDescription,
   headerName,
@@ -20,8 +21,10 @@ import { AiFillLinkedin,
   AiFillYoutube
 } from "react-icons/ai";
 import {FaXTwitter} from 'react-icons/fa6';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const Hero = () => {
+  const isMobile = useIsMobile();
   const scrollToProjects = () => {
     const element = document.getElementById('projects');
     if (element) {
@@ -29,8 +32,10 @@ const Hero = () => {
     }
   };
 
+  console.log("isMobile", isMobile);
+
   return (
-    <section className="min-h-screen flex items-center justify-center relative px-6">
+    <section className="min-h-screen flex items-center justify-center relative px-6 pb-20">
       <div className="max-w-4xl mx-auto text-center">
         <div className="animate-fade-in flex flex-col items-center justify-center mt-20">
 
@@ -43,7 +48,7 @@ const Hero = () => {
 
             {/* CareerTitle */}
             <h2 className="text-xl md:text-2xl lg:text-3xl text-foreground/80 mb-4 overline">
-              {careerTitleLong}
+              {isMobile ? careerTitleShort : careerTitleLong}
             </h2>
 
           {/* Main Portrait */}
@@ -124,7 +129,7 @@ const Hero = () => {
         </div>
         </div>
       </div>
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 animate-bounce">
         <ArrowDown className="w-6 h-6 text-foreground/40" />
       </div>
     </section>
