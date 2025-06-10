@@ -122,7 +122,7 @@ const Hero = () => {
             onClick={() => window.open(resumeLink, '_blank')}
             className="px-8 py-3"
           >
-            Download Resume
+            Resume
           </Button>
         </div>
         </div>

@@ -28,7 +28,7 @@ export const email = "daurham95@gmail.com";
 export const phone = "+1 (623) 261-2380";
 
 // Links
-export const resumeLink = "https://docs.google.com/document/d/1BuWNK6pHv0wWnTUAfriOv46RL_x6LvSkpYA3HpRpqbs/edit?usp=sharing";
+export const resumeLink = "https://docs.google.com/document/d/1BuWNK6pHv0wWnTUAfriOv46RL_x6LvSkpYA3HpRpqbs/";
 export const linkedinLink = "https://www.linkedin.com/in/daurham/";
 export const githubLink = "https://github.com/daurham";
 export const githubReposLink = "https://github.com/daurham?tab=repositories";

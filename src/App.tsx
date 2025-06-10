@@ -7,8 +7,14 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 // import BlogPost1 from "./pages/page528";
 // import BlogPost2 from "./pages/page531";
+import { resumeLink } from "./constant.config";
 
 const queryClient = new QueryClient();
+
+const ResumeRedirect = () => {
+  window.location.href = resumeLink;
+  return null;
+};
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -18,6 +24,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/resume" element={<ResumeRedirect />} />
           {/* <Route path="/page528" element={<BlogPost1 />} /> */}
           {/* <Route path="/page531" element={<BlogPost2 />} /> */}
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
