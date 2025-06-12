@@ -61,34 +61,41 @@ export const projects = [
     isLive: false,
     isGithub: true,
     liveUrl: "#",
-    githubUrl: "https://github.com/daurham/iphone_sms_transcriptor"
+    githubUrl: "https://github.com/daurham/iphone_sms_transcriptor",
+    date: "2023-11-01",
+    screenshots: [
+      "/screenshots/iphone_sms_1.png",
+      "/screenshots/iphone_sms_2.png"
+    ],
+    carousel: true
   },
   {
     title: "PiRoutine",
     description: "A full-stack alarm system connecting an AWS EC2 client to a Raspberry Pi server with a relay switched water pump. It prompts users to wake up for a morning run, or else the bed gets soaked.",
-    // description: "Developed an alarm system using Pavlovian conditioning, connecting an AWS EC2 client to a Raspberry Pi server with a relay switch and water pump. It prompts users to wake up for a morning run, or else the bed gets soaked.",
     technologies: ["TypeScript", "React", "Node.js", "Express", "MySQL", "AWS", "Raspberry Pi"],
     isLive: false,
     isGithub: true,
     liveUrl: "#",
-    githubUrl: "https://github.com/daurham/PiRoutine-EC2-Client"
+    githubUrl: "https://github.com/daurham/PiRoutine-EC2-Client",
+    date: "2022-06-15",
+    interactiveDemo: true,
+    demoUrl: "https://demo.piroutine.com"
   },
-  // {
-  //   title: "Daurham.com",
-  //   description: "My personal website built with React, Tailwind CSS, and TypeScript.",
-  //   technologies: ["React", "TypeScript", "Tailwind CSS", "Shadcn UI"],
-  //   isLive: true,
-  //   isGithub: true,
-  //   liveUrl: "https://daurham.com",
-  //   githubUrl: "https://github.com/daurham/daurham.com"
-  // },
-  // {
-  //   title: "Daurham.com",
-  //   description: "My personal website built with React, Tailwind CSS, and TypeScript.",
-  //   technologies: ["React", "TypeScript", "Tailwind CSS", "Shadcn UI"],
-  //   isLive: true,
-  //   isGithub: true,
-  //   liveUrl: "https://daurham.com",
-  //   githubUrl: "https://github.com/daurham/daurham.com"
-  // },
+  // Example frontend project with carousel and demo
+  {
+    title: "Daurham.com (Frontend Portfolio)",
+    description: "My personal website built with React, Tailwind CSS, and TypeScript. Features a beautiful, interactive portfolio and blog.",
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Shadcn UI"],
+    isLive: true,
+    isGithub: true,
+    liveUrl: "https://daurham.com",
+    githubUrl: "https://github.com/daurham/daurham.com",
+    date: "2024-04-01",
+    screenshots: [
+      "/screenshots/daurham_home.png",
+      "/screenshots/daurham_blog.png"
+    ],
+    carousel: true,
+    interactiveDemo: false
+  },
 ];

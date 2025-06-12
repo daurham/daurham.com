@@ -4,6 +4,11 @@
       "source": "/resume",
       "destination": "https://docs.google.com/document/d/1BuWNK6pHv0wWnTUAfriOv46RL_x6LvSkpYA3HpRpqbs/",
       "permanent": true
+    },
+    {
+      "source": "/frontend",
+      "destination": "https://www.daurham.com/frontend",
+      "permanent": true
     }
   ]
 }

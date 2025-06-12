@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Moon, Sun, FileText, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { navbarName, resumeLink } from '@/constant.config';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 interface NavigationProps {
   theme: 'light' | 'dark';
@@ -10,7 +11,10 @@ interface NavigationProps {
 
 const Navigation = ({ theme, toggleTheme }: NavigationProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const navigate = useNavigate();
+  const location = useLocation();
+  const isHome = location.pathname === '/';
+  
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -24,30 +28,40 @@ const Navigation = ({ theme, toggleTheme }: NavigationProps) => {
       <div className="max-w-6xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
 
-          <div className="text-2xl font-bold bg-regal-blue bg-clip-text text-transparent dark:text-moonglow">
+          <div className="cursor-pointer text-2xl font-bold bg-regal-blue bg-clip-text text-transparent dark:text-moonglow"
+            onClick={() => navigate('/')}
+          >
             {navbarName}
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
+            {isHome && (
             <button
               onClick={() => scrollToSection('about')}
               className="text-foreground/80 hover:text-foreground transition-colors"
             >
               About
             </button>
+            )}
+            {isHome && (
             <button
               onClick={() => scrollToSection('projects')}
               className="text-foreground/80 hover:text-foreground transition-colors"
             >
               Projects
             </button>
-            {/* <button
+            )}
+            {/*
+            {isHome && (
+            <button
               onClick={() => scrollToSection('blog')}
               className="text-foreground/80 hover:text-foreground transition-colors"
             >
               Updates
-            </button> */}
+            </button>
+            )}
+            */}
             
             <div className="flex items-center space-x-4">
               <Button
