@@ -8,6 +8,36 @@
       "headers": { "Location": "https://docs.google.com/document/d/1BuWNK6pHv0wWnTUAfriOv46RL_x6LvSkpYA3HpRpqbs/" }
     },
     {
+      "src": "/instagram",
+      "status": 308,
+      "headers": { "Location": "https://www.instagram.com/captain_daurham/" }
+    },
+    {
+      "src": "/github",
+      "status": 308,
+      "headers": { "Location": "https://github.com/daurham" }
+    },
+    {
+      "src": "/linkedin",
+      "status": 308,
+      "headers": { "Location": "https://www.linkedin.com/in/daurham/" }
+    },
+    {
+      "src": "/youtube",
+      "status": 308,
+      "headers": { "Location": "https://www.youtube.com/@daurham" }
+    },
+    {
+      "src": "/x",
+      "status": 308,
+      "headers": { "Location": "https://x.com/daurham" }
+    },
+    {
+      "src": "/twitter",
+      "status": 308,
+      "headers": { "Location": "https://x.com/daurham" }
+    },
+    {
       "src": "/.*",
       "dest": "/index.html",
       "status": 200
