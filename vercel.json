@@ -1,19 +1,16 @@
 {
   "version": 2,
-  "cleanUrls": true,
   "routes": [
     { "handle": "filesystem" },
     {
-      "src": "/(.*)",
-      "dest": "/index",
-      "status": 200
-    }
-  ],
-  "redirects": [
+      "src": "/resume",
+      "status": 308,
+      "headers": { "Location": "https://docs.google.com/document/d/1BuWNK6pHv0wWnTUAfriOv46RL_x6LvSkpYA3HpRpqbs/" }
+    },
     {
-      "source": "/resume",
-      "destination": "https://docs.google.com/document/d/1BuWNK6pHv0wWnTUAfriOv46RL_x6LvSkpYA3HpRpqbs/",
-      "permanent": true
+      "src": "/.*",
+      "dest": "/index.html",
+      "status": 200
     }
   ]
 }
