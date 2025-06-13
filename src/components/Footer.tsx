@@ -13,7 +13,7 @@ const Footer = () => {
           </div>
 
           <div className="flex items-center space-x-6">
-            <button onClick={() => navigate('/frontend')} className="text-foreground/60 hover:text-foreground transition-colors"> frontend </button>
+            {/* <button onClick={() => navigate('/frontend')} className="text-foreground/60 hover:text-foreground transition-colors"> frontend </button> */}
               <a
                 href={instagramLink}
                 target="_blank"

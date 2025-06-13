@@ -60,14 +60,16 @@ export const projects = [
     technologies: ["Windows", "Flutter", "Dart", "SQLite"],
     isLive: false,
     isGithub: true,
-    liveUrl: "#",
+    liveUrl: null,
     githubUrl: "https://github.com/daurham/iphone_sms_transcriptor",
     date: "2023-11-01",
     screenshots: [
       "/screenshots/iphone_sms_1.png",
       "/screenshots/iphone_sms_2.png"
     ],
-    carousel: true
+    carousel: true,
+    interactiveDemo: false,
+    component: null,
   },
   {
     title: "PiRoutine",
@@ -75,27 +77,30 @@ export const projects = [
     technologies: ["TypeScript", "React", "Node.js", "Express", "MySQL", "AWS", "Raspberry Pi"],
     isLive: false,
     isGithub: true,
-    liveUrl: "#",
+    liveUrl: null,
     githubUrl: "https://github.com/daurham/PiRoutine-EC2-Client",
     date: "2022-06-15",
-    interactiveDemo: true,
-    demoUrl: "https://demo.piroutine.com"
+    interactiveDemo: false,
+    demoUrl: "https://piroutine.com",
+    screenshots: null,
+    carousel: false,
+    component: null,
   },
   // Example frontend project with carousel and demo
-  {
-    title: "Daurham.com (Frontend Portfolio)",
-    description: "My personal website built with React, Tailwind CSS, and TypeScript. Features a beautiful, interactive portfolio and blog.",
-    technologies: ["React", "TypeScript", "Tailwind CSS", "Shadcn UI"],
-    isLive: true,
-    isGithub: true,
-    liveUrl: "https://daurham.com",
-    githubUrl: "https://github.com/daurham/daurham.com",
-    date: "2024-04-01",
-    screenshots: [
-      "/screenshots/daurham_home.png",
-      "/screenshots/daurham_blog.png"
-    ],
-    carousel: true,
-    interactiveDemo: false
-  },
+  // {
+  //   title: "Daurham.com (Frontend Portfolio)",
+  //   description: "My personal website built with React, Tailwind CSS, and TypeScript. Features a beautiful, interactive portfolio and blog.",
+  //   technologies: ["React", "TypeScript", "Tailwind CSS", "Shadcn UI"],
+  //   isLive: true,
+  //   isGithub: true,
+  //   liveUrl: "https://daurham.com",
+  //   githubUrl: "https://github.com/daurham/daurham.com",
+  //   date: "2024-04-01",
+  //   screenshots: [
+  //     "/screenshots/daurham_home.png",
+  //     "/screenshots/daurham_blog.png"
+  //   ],
+  //   carousel: true,
+  //   interactiveDemo: false
+  // },
 ];

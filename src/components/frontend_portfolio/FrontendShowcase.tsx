@@ -62,7 +62,6 @@ const FrontendShowcase = () => {
         </div>
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, idx) => {
-            const isDemoComponent = project.interactiveDemo && project.component;
             const isUniqueButtonDemo = project.title.toLowerCase().includes('unique button');
             return (
               <Card key={project.title} className="group hover:shadow-xl transition-all duration-300 flex flex-col">
@@ -97,7 +96,7 @@ const FrontendShowcase = () => {
                   </Collapsible>
                 </CardHeader>
                 <CardContent className="flex flex-col gap-4 flex-grow">
-                  {isDemoComponent ? (
+                  {project.interactiveComponent ? (
                     <project.component />
                   ) : project.screenshots && project.screenshots.length > 0 && project.carousel ? (
                     <Carousel className="w-full">
@@ -143,7 +142,7 @@ const FrontendShowcase = () => {
                       GitHub
                     </Button>
                   )}
-                  {project.interactiveDemo && project.demoUrl && !isDemoComponent && !isUniqueButtonDemo && (
+                  {project.interactiveDemo && project.demoUrl && !isUniqueButtonDemo && (
                     <Dialog open={openDemo === project.title} onOpenChange={(open) => setOpenDemo(open ? project.title : null)}>
                       <DialogTrigger asChild>
                         <Button variant="default" size="sm" className="flex-1">Interactive Demo</Button>

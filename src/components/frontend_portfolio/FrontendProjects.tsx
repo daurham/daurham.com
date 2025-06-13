@@ -115,9 +115,7 @@ export const projects: Project[] = [
     interactiveComponent: true,
     component: UniqueButton,
     demoUrl: "/demos/unique-button-demo.html",
-    screenshots: [
-      "/screenshots/unique_button_1.png"
-    ],
+    screenshots: null,
     carousel: false
   },
   // Dummy project with a long description
