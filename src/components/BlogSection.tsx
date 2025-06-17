@@ -2,7 +2,7 @@ import { posts } from '@/blog';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from './ui/button';
 
-const Blog = () => {
+const BlogSection = () => {
 
 
   return (
@@ -59,4 +59,4 @@ const Blog = () => {
   );
 };
 
-export default Blog;
+export default BlogSection;

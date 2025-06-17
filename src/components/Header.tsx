@@ -23,7 +23,7 @@ import { AiFillLinkedin,
 import {FaXTwitter} from 'react-icons/fa6';
 import { useIsMobile } from '@/hooks/use-mobile';
 
-const Hero = () => {
+const Header = () => {
   const isMobile = useIsMobile();
   const scrollToProjects = () => {
     const element = document.getElementById('projects');
@@ -136,4 +136,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default Header;

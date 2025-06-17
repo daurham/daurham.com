@@ -5,7 +5,7 @@ import { avatarFallback, name, secondaryPortraitPath, skills, careerTitleShort, 
 const InlineTxt = ({ text }: { text: string; }) => (<span className=" text-regal-blue dark:text-moonglow">{text}</span>);
 
 
-const About = () => {
+const AboutSection = () => {
   const getYearsOfJourney = () => String(new Date().getFullYear() - 2009);
   return (
     <section id="about" className="py-20 px-6">
@@ -70,4 +70,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default AboutSection;

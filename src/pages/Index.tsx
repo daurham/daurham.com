@@ -1,10 +1,10 @@
 
 import { useState, useEffect } from 'react';
 import Navigation from '@/components/Navigation';
-import Hero from '@/components/Hero';
-import About from '@/components/About';
-import Projects from '@/components/Projects';
-import Blog from '@/components/Blog';
+import Header from '@/components/Header';
+import AboutSection from '@/components/AboutSection';
+import ProjectSection from '@/components/ProjectSection';
+import BlogSection from '@/components/BlogSection';
 import Footer from '@/components/Footer';
 
 const Index = () => {
@@ -44,10 +44,10 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navigation theme={theme} toggleTheme={toggleTheme} />
-      <Hero />
-      <About />
-      <Projects />
-      {/* <Blog /> */}
+      <Header />
+      <AboutSection />
+      <ProjectSection />
+      {/* <BlogSection /> */}
       <Footer />
     </div>
   );

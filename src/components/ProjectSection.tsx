@@ -1,8 +1,11 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { githubLink, githubReposLink, projects } from '@/constant.config';
+import { githubLink, githubReposLink } from '@/constant.config';
+import { allProjects } from './projects/AllProjects';
 
-const Projects = () => {
+const ProjectSection = () => {
+
+  const featuredProjects = allProjects.filter(project => project.isFeatured);
 
   return (
     <section id="projects" className="py-20 px-6 bg-muted/30">
@@ -16,7 +19,7 @@ const Projects = () => {
         </div>
 
         <div className="flex flex-wrap justify-center gap-8">
-          {projects.map((project, index) => (
+          {featuredProjects.map((project, index) => (
             <Card key={project.title} className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] flex flex-col">
               <CardHeader>
                 <CardTitle className="group-hover:text-blue-600 transition-colors dark:group-hover:text-moonglow">
@@ -79,4 +82,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default ProjectSection;

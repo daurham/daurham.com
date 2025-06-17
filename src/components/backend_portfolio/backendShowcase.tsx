@@ -50,7 +50,7 @@ const FrontendShowcase = () => {
   const [openDemo, setOpenDemo] = useState<string | null>(null);
   const [openDesc, setOpenDesc] = useState<{ [title: string]: boolean }>({});
 
-  const frontendProjects = allProjects.filter(project => project.isFrontendFeatured);
+  const backendProjects = allProjects.filter(project => project.isBackendFeatured);
 
   return (
     <section className="py-20 px-4 bg-gradient-to-br from-blue-50/60 to-purple-50/40 dark:from-gray-900 dark:to-gray-950 min-h-screen">
@@ -62,16 +62,19 @@ const FrontendShowcase = () => {
             Explore some of my favorite frontend projects, featuring interactive demos, beautiful UIs, and modern web technologies.
           </p>
         </div>
-        <div className="flex flex-wrap justify-center gap-8">
-          {frontendProjects.map((project, idx) => {
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+          {backendProjects.map((project, idx) => {
             const isUniqueButtonDemo = project.title.toLowerCase().includes('unique button');
             return (
-              <Card key={project.title} className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] flex flex-col">
-                <CardHeader>
+              <Card key={project.title} className="group hover:shadow-xl transition-all duration-300 flex flex-col">
+                <CardHeader className="pb-2">
+                  <div className="flex items-center justify-between mb-2">
                     {/* Title */}
-                    <CardTitle className="group-hover:text-blue-600 transition-colors dark:group-hover:text-moonglow">
+                    <CardTitle className="group-hover:text-blue-600 transition-colors dark:group-hover:text-moonglow text-lg md:text-xl">
                       {project.title}
                     </CardTitle>
+
+                  </div>
                   <Collapsible open={!!openDesc[project.title]} onOpenChange={open => setOpenDesc(prev => ({ ...prev, [project.title]: open }))}>
                     {openDesc[project.title] ? (
                       // Description
@@ -102,7 +105,7 @@ const FrontendShowcase = () => {
                       <CarouselContent>
                         {project.screenshots.map((src, i) => (
                           <CarouselItem key={i} className="flex items-center justify-center h-48 bg-muted rounded-lg overflow-hidden">
-                            <img src={src} alt={`${project.title} screenshot ${i+1}`} className="object-contain w-full h-full" />
+                            <img src={src} alt={`${project.title} screenshot ${i+1}`} className="object-cover w-full h-full" />
                           </CarouselItem>
                         ))}
                       </CarouselContent>
@@ -111,7 +114,7 @@ const FrontendShowcase = () => {
                     </Carousel>
                   ) : project.screenshots && project.screenshots.length > 0 ? (
                     <div className="flex items-center justify-center h-48 bg-muted rounded-lg overflow-hidden">
-                      <img src={project.screenshots[0]} alt={`${project.title} screenshot`} className="object-contain w-full h-full" />
+                      <img src={project.screenshots[0]} alt={`${project.title} screenshot`} className="object-cover w-full h-full" />
                     </div>
                   ) : null}
                   <div className="flex flex-wrap gap-2 mt-2">
@@ -128,16 +131,6 @@ const FrontendShowcase = () => {
                       onClick={() => window.open(project.liveUrl, '_blank')}
                       className="flex-1"
                     >
-                      Live
-                    </Button>
-                  )}
-                  {project.interactiveDemo && project.demoUrl && (
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      onClick={() => window.open(project.demoUrl, '_blank')}
-                      className="flex-1"
-                    >
                       Live Demo
                     </Button>
                   )}
@@ -151,8 +144,7 @@ const FrontendShowcase = () => {
                       GitHub
                     </Button>
                   )}
-                  {/* TODO: Revise this code: */}
-                  {project.interactiveComponentDemo && project.component && (
+                  {project.interactiveDemo && project.demoUrl && !isUniqueButtonDemo && (
                     <Dialog open={openDemo === project.title} onOpenChange={(open) => setOpenDemo(open ? project.title : null)}>
                       <DialogTrigger asChild>
                         <Button variant="default" size="sm" className="flex-1">Interactive Demo</Button>
