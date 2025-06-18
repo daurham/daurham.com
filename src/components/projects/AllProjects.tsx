@@ -61,7 +61,7 @@ export const allProjects: Project[] = [
     githubUrl: "https://github.com/daurham/iphone_sms_transcriptor",
     date: "2023-11-01",
     screenshots: [
-      "/screenshots/iphone_sms_1.png",
+      // "/screenshots/iphone_sms_1.png",
     ],
     carousel: false,
     interactiveDemo: false,
