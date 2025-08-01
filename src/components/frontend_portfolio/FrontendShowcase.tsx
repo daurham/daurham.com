@@ -1,10 +1,8 @@
 import { useState } from 'react';
 import { allProjects } from '@/components/projects/AllProjects';
-import { 
-  ProjectCard, 
-  InteractiveDemoDialog, 
-  ImageViewerDialog 
-} from '@/components/project-cards';
+import { ProjectCard } from '@/components/project-cards/ProjectCard';
+import { InteractiveDemoDialog } from '@/components/project-cards/InteractiveDemoDialog';
+import { ImageViewerDialog } from '@/components/project-cards/ImageViewerDialog';
 
 const FrontendShowcase = () => {
   const [openDemo, setOpenDemo] = useState<string | null>(null);

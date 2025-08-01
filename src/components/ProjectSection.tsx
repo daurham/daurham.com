@@ -2,9 +2,16 @@ import { Button } from '@/components/ui/button';
 import { githubReposLink } from '@/constant.config';
 import { allProjects } from './projects/AllProjects';
 import { ProjectCard } from './project-cards';
+import { useState } from 'react';
+import { ImageViewerDialog } from './project-cards/ImageViewerDialog';
 
 const ProjectSection = () => {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const featuredProjects = allProjects.filter(project => project.isFeatured);
+
+  const handleImageClick = (imageSrc: string) => {
+    setSelectedImage(imageSrc);
+  };
 
   return (
     <section id="projects" className="py-20 px-6 bg-muted/30">
@@ -22,6 +29,7 @@ const ProjectSection = () => {
             <ProjectCard
               key={project.title}
               project={project}
+              onImageClick={handleImageClick}
             />
           ))}
         </div>
@@ -36,6 +44,12 @@ const ProjectSection = () => {
             View All Projects on GitHub
           </Button>
         </div>
+
+        {/* Image Viewer Dialog */}
+        <ImageViewerDialog
+          imageSrc={selectedImage}
+          onClose={() => setSelectedImage(null)}
+        />
       </div>
     </section>
   );
