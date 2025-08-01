@@ -1,10 +1,9 @@
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { githubLink, githubReposLink } from '@/constant.config';
+import { githubReposLink } from '@/constant.config';
 import { allProjects } from './projects/AllProjects';
+import { ProjectCard } from './project-cards';
 
 const ProjectSection = () => {
-
   const featuredProjects = allProjects.filter(project => project.isFeatured);
 
   return (
@@ -19,51 +18,11 @@ const ProjectSection = () => {
         </div>
 
         <div className="flex flex-wrap justify-center gap-8">
-          {featuredProjects.map((project, index) => (
-            <Card key={project.title} className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] flex flex-col">
-              <CardHeader>
-                <CardTitle className="group-hover:text-blue-600 transition-colors dark:group-hover:text-moonglow">
-                  {project.title}
-                </CardTitle>
-                <CardDescription className="text-sm">
-                  {project.description}
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="flex flex-col flex-grow">
-                <div className="flex flex-wrap gap-2">
-                  {project.technologies.map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-2 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 text-xs rounded-md"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-                <div className="flex gap-3 mt-auto pt-4">
-                  {project.isLive && (
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    onClick={() => window.open(project.liveUrl, '_blank')}
-                    className="flex-1"
-                  >
-                    Live Demo
-                  </Button>
-                  )}
-                  {project.isGithub && (
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    onClick={() => window.open(project.githubUrl, '_blank')}
-                    className="flex-1"
-                  >
-                    GitHub
-                  </Button>
-                  )}
-                </div>
-              </CardContent>
-            </Card>
+          {featuredProjects.map((project) => (
+            <ProjectCard
+              key={project.title}
+              project={project}
+            />
           ))}
         </div>
 

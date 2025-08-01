@@ -1,17 +1,33 @@
-import { useState } from 'react';
 import { allProjects } from '@/components/projects/AllProjects';
-import { 
-  ProjectCard, 
-  InteractiveDemoDialog, 
-  ImageViewerDialog 
+import { useState } from 'react';
+import {
+  ProjectCard,
+  InteractiveDemoDialog,
+  ImageViewerDialog
 } from '@/components/project-cards';
 
-const FrontendShowcase = () => {
+type Project = {
+  title: string;
+  description: string;
+  technologies: string[];
+  isLive: boolean;
+  isGithub: boolean;
+  liveUrl?: string;
+  githubUrl?: string;
+  date?: string;
+  screenshots?: string[];
+  carousel?: boolean;
+  interactiveDemo?: boolean;
+  demoUrl?: string;
+  component?: React.ComponentType;
+};
+
+const BackendShowcase = () => {
   const [openDemo, setOpenDemo] = useState<string | null>(null);
   const [openDesc, setOpenDesc] = useState<{ [title: string]: boolean }>({});
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
-
-  const frontendProjects = allProjects.filter(project => project.isFrontendFeatured);
+  
+  const backendProjects = allProjects.filter(project => project.isBackendFeatured);
 
   const handleDescToggle = (title: string, open: boolean) => {
     setOpenDesc(prev => ({ ...prev, [title]: open }));
@@ -30,16 +46,16 @@ const FrontendShowcase = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            Frontend Project Showcase
+            Backend Project Showcase
           </h1>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-6 rounded-full"></div>
           <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-            Explore some of my favorite frontend projects, featuring interactive demos, beautiful UIs, and modern web technologies.
+            Explore some of my favorite backend projects, featuring interactive demos, beautiful UIs, and modern web technologies.
           </p>
         </div>
         
         <div className="flex flex-wrap justify-center gap-8">
-          {frontendProjects.map((project) => (
+          {backendProjects.map((project) => (
             <ProjectCard
               key={project.title}
               project={project}
@@ -54,7 +70,7 @@ const FrontendShowcase = () => {
         {/* Interactive Demo Dialog */}
         {openDemo && (
           <InteractiveDemoDialog
-            project={frontendProjects.find(p => p.title === openDemo)!}
+            project={backendProjects.find(p => p.title === openDemo)!}
             open={!!openDemo}
             onOpenChange={(open) => setOpenDemo(open ? openDemo : null)}
           />
@@ -70,4 +86,4 @@ const FrontendShowcase = () => {
   );
 };
 
-export default FrontendShowcase;
+export default BackendShowcase;

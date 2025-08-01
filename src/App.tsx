@@ -9,6 +9,7 @@ import NotFound from "./pages/NotFound";
 // import BlogPost2 from "./pages/page531";
 import { resumeLink } from "./constant.config";
 import FrontendPortfolio from "./pages/FrontendPortfolio";
+import BackendPortfolio from "./pages/BackendPortfolio";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/resume" element={<ResumeRedirect />} />
           <Route path="/frontend" element={<FrontendPortfolio />} />
+          <Route path="/backend" element={<BackendPortfolio />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

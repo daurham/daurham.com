@@ -1,10 +1,9 @@
-
 import { useState, useEffect } from 'react';
 import Navigation from '@/components/Navigation';
-import FrontendShowcase from '@/components/frontend_portfolio/FrontendShowcase';
+import BackendShowcase from '@/components/backend_portfolio/BackendShowcase';
 import Footer from '@/components/Footer';
 
-const FrontendPortfolio = () => {
+const BackendPortfolio = () => {
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
 
   useEffect(() => {
@@ -41,10 +40,10 @@ const FrontendPortfolio = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navigation theme={theme} toggleTheme={toggleTheme} />
-      <FrontendShowcase />
+      <BackendShowcase />
       <Footer /> 
     </div>
   );
 };
 
-export default FrontendPortfolio;
+export default BackendPortfolio;

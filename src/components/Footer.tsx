@@ -1,9 +1,7 @@
 import { email, githubLink, instagramLink, linkedinLink, name, twitterLink, youtubeLink } from "@/constant.config";
-import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  const navigate = useNavigate();
   return (
     <footer className="py-8 px-6 border-t border-border">
       <div className="max-w-6xl mx-auto">
@@ -12,8 +10,31 @@ const Footer = () => {
             © {currentYear} {name}. All rights reserved.
           </div>
 
+          <div className="text-foreground/60 mb-4 md:mb-0">
+            |
+          </div>
+
           <div className="flex items-center space-x-6">
-            {/* <button onClick={() => navigate('/frontend')} className="text-foreground/60 hover:text-foreground transition-colors"> frontend </button> */}
+            <a 
+              href="/frontend" 
+              rel="noopener noreferrer" 
+              className="text-foreground/60 hover:text-foreground transition-colors">
+              Frontend Portfolio
+            </a>
+
+            <a 
+              href="/backend" 
+              rel="noopener noreferrer" 
+              className="text-foreground/60 hover:text-foreground transition-colors">
+              Backend Portfolio
+            </a>
+          </div>
+
+          <div className="text-foreground/60 mb-4 md:mb-0">
+            |
+          </div>
+
+          <div className="flex items-center space-x-6">
               <a
                 href={instagramLink}
                 target="_blank"
