@@ -6,24 +6,22 @@ export const fullName = "Jacob Ernest Daurham";
 export const shortName = "Jake Daurham";
 export const headerName = fullName;
 
-export const careerTitleLong = "Full-Stack Software Engineer | AI Enthusiast";
+export const careerTitleLong = "Full-Stack Software Engineer | Product & AI Systems";
 export const careerTitleShort = "Software Engineer";
 export const headerCareerTitle = careerTitleLong;
 
-export const headerDescription = "Passionately studying the world around me. Motivated to create a better one.";
-export const shortDescription = "Passionate about creating elegant solutions to complex problems. Currently seeking opportunities to build innovative software that makes a difference.";
-export const longDescription = "I am a software engineer with a passion for creating elegant solutions to complex problems. I am currently seeking opportunities to build innovative software that makes a difference.";
+export const headerDescription = "I build polished, practical software from interface to infrastructure — with a focus on React, TypeScript, data-heavy products, automation, and AI-integrated systems.";
+export const shortDescription = "Full-stack software engineer building practical products with React, TypeScript, Node, PostgreSQL, cloud infrastructure, and AI integrations.";
+export const longDescription = "I am a full-stack software engineer focused on shipping useful software end to end: product UX, APIs, data models, automation, deployment, and the operational details that make an application dependable.";
 
 // Portraits
 export const mainPortraitPath = "/jacob_daurham_dark.png";
 export const mainPortraitPathDark = "/jacob_daurham_dark.png";
 export const secondaryPortraitPath = "/jacob_daurham_china.jpg";
-// export const mainPortraitPath = "/jacob_daurham_china.jpg";
-// export const secondaryPortraitPath = "/jacob_daurham.png";
 export const avatarFallback = "JD";
 
 // Contact Information
-export const location = "Phoenix, AZ";
+export const location = "Arizona";
 export const email = "daurham95@gmail.com";
 export const phone = "+1 (623) 261-2380";
 
@@ -38,17 +36,16 @@ export const youtubeLink = "https://www.youtube.com/daurham/";
 
 // Skills
 export const skills = [
-  'JavaScript/TypeScript',
-  'C#/.NET',
-  'React/Svelte/Vue',
-  'Java/Spring',
-  'Node.js/Express',
-  'Python/Django',
-  'PostgreSQL/MongoDB',
-  'Flutter/Dart',
-  'AWS/Cloud',
-  'Git/GitHub',
-  'Docker/Kubernetes',
-  'AI/ML',
+  "React & TypeScript",
+  "JavaScript / Node.js",
+  "C# / .NET",
+  "PostgreSQL & SQL",
+  "REST API Design",
+  "Vite & Modern Frontend",
+  "AI / LLM Integration",
+  "Docker & Linux",
+  "AWS / Vercel / Cloudflare",
+  "Testing & Automation",
+  "Git / GitHub",
+  "Product Engineering",
 ];
-
