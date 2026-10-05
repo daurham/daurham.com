@@ -1,19 +1,26 @@
-import React from 'react';
+import React from "react";
 import {
   Card,
   CardHeader,
   CardTitle,
   CardContent,
-  CardFooter
-} from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
+  CardFooter,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import {
   Collapsible,
   CollapsibleTrigger,
-  CollapsibleContent
-} from '@/components/ui/collapsible';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+  CollapsibleContent,
+} from "@/components/ui/collapsible";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import { Code2 } from "lucide-react";
 
 export interface ProjectCardProps {
   project: {
@@ -37,8 +44,8 @@ export interface ProjectCardProps {
   onDemoOpen?: (projectTitle: string) => void;
   openDesc?: { [title: string]: boolean };
   onDescToggle?: (title: string, open: boolean) => void;
-  renderContent?: (project: ProjectCardProps['project']) => React.ReactNode;
-  renderFooter?: (project: ProjectCardProps['project']) => React.ReactNode;
+  renderContent?: (project: ProjectCardProps["project"]) => React.ReactNode;
+  renderFooter?: (project: ProjectCardProps["project"]) => React.ReactNode;
 }
 
 const getFirstSentence = (text: string) => {
@@ -54,11 +61,10 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   openDesc = {},
   onDescToggle,
   renderContent,
-  renderFooter
+  renderFooter,
 }) => {
-
-
-  const isDescriptionCollapsible = project.description.length > getFirstSentence(project.description).length;
+  const isDescriptionCollapsible =
+    project.description.length > getFirstSentence(project.description).length;
   const isDescOpen = openDesc[project.title] || false;
 
   const handleDescToggle = (open: boolean) => {
@@ -66,12 +72,14 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   };
 
   return (
-    <Card className={`group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] flex flex-col ${className}`}>
+    <Card
+      className={`group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] flex flex-col ${className}`}
+    >
       <CardHeader>
         <CardTitle className="group-hover:text-blue-600 transition-colors dark:group-hover:text-moonglow">
           {project.title}
         </CardTitle>
-        
+
         {onDescToggle ? (
           <Collapsible open={isDescOpen} onOpenChange={handleDescToggle}>
             {isDescOpen ? (
@@ -83,13 +91,13 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             ) : (
               <span className="block text-sm text-muted-foreground mb-1">
                 {getFirstSentence(project.description)}
-                {isDescriptionCollapsible && '...'}
+                {isDescriptionCollapsible && "..."}
               </span>
             )}
             {isDescriptionCollapsible && (
               <CollapsibleTrigger asChild>
                 <Button variant="link" size="sm" className="px-0 h-auto text-xs">
-                  {isDescOpen ? 'See less' : 'See more'}
+                  {isDescOpen ? "See less" : "See more"}
                 </Button>
               </CollapsibleTrigger>
             )}
@@ -102,74 +110,84 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
       </CardHeader>
 
       <CardContent className="flex flex-col gap-4 flex-grow">
-        {renderContent ? renderContent(project) : (
-          <DefaultProjectContent 
-            project={project} 
-            onImageClick={onImageClick}
-          />
+        {renderContent ? (
+          renderContent(project)
+        ) : (
+          <DefaultProjectContent project={project} onImageClick={onImageClick} />
         )}
-        
-        {/* Technologies */}
+
         <div className="flex flex-wrap gap-2 mt-2">
           {project.technologies?.map((tech) => (
-            <Badge key={tech} variant="secondary">{tech}</Badge>
+            <Badge key={tech} variant="secondary">
+              {tech}
+            </Badge>
           ))}
         </div>
       </CardContent>
 
-              <CardFooter className="flex gap-3 mt-auto pt-2">
-          {renderFooter ? renderFooter(project) : (
-            <DefaultProjectFooter 
-              project={project}
-              onDemoOpen={onDemoOpen}
-            />
-          )}
-        </CardFooter>
+      <CardFooter className="flex gap-3 mt-auto pt-2">
+        {renderFooter ? (
+          renderFooter(project)
+        ) : (
+          <DefaultProjectFooter project={project} onDemoOpen={onDemoOpen} />
+        )}
+      </CardFooter>
     </Card>
   );
 };
 
-// Default content renderer
 const DefaultProjectContent: React.FC<{
-  project: ProjectCardProps['project'];
+  project: ProjectCardProps["project"];
   onImageClick?: (imageSrc: string) => void;
 }> = ({ project, onImageClick }) => {
-
   if (project.interactiveComponent && project.component) {
     return <project.component />;
   }
 
   if (project.screenshots && project.screenshots.length > 0) {
     if (project.carousel && project.screenshots.length > 1) {
-      return <ProjectCarousel project={project} onImageClick={onImageClick} />;
+      return (
+        <ProjectCarousel project={project} onImageClick={onImageClick} />
+      );
     }
-    
+
     return (
       <div className="relative group flex items-center justify-center h-48 rounded-lg overflow-hidden">
-        <img 
-          src={project.screenshots[0]} 
-          alt={`${project.title} screenshot`} 
+        <img
+          src={project.screenshots[0]}
+          alt={`${project.title} screenshot`}
           className="object-contain w-full h-full cursor-zoom-in hover:scale-105 transition-all duration-300 ease-out"
           style={{
-            maxHeight: '100%',
-            maxWidth: '100%',
-            width: 'auto',
-            height: 'auto'
+            maxHeight: "100%",
+            maxWidth: "100%",
+            width: "auto",
+            height: "auto",
           }}
           onClick={() => onImageClick?.(project.screenshots![0])}
         />
-        {/* Subtle hover overlay */}
-        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 pointer-events-none"></div>
+        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 pointer-events-none" />
       </div>
     );
   }
 
-  return null;
+  return (
+    <div className="h-44 rounded-xl border border-border bg-gradient-to-br from-muted/80 to-background p-5 flex flex-col justify-between overflow-hidden">
+      <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
+        <Code2 className="w-4 h-4" />
+        Product system
+      </div>
+      <div>
+        <p className="text-xl font-semibold leading-tight">{project.title}</p>
+        <p className="text-xs text-muted-foreground mt-2">
+          {project.technologies.slice(0, 3).join(" • ")}
+        </p>
+      </div>
+    </div>
+  );
 };
 
-// Default footer renderer
 const DefaultProjectFooter: React.FC<{
-  project: ProjectCardProps['project'];
+  project: ProjectCardProps["project"];
   onDemoOpen?: (projectTitle: string) => void;
 }> = ({ project, onDemoOpen }) => {
   const buttons = [];
@@ -180,11 +198,11 @@ const DefaultProjectFooter: React.FC<{
         key="live"
         variant="outline"
         size="sm"
-        onClick={() => window.open(project.liveUrl, '_blank')}
+        onClick={() => window.open(project.liveUrl, "_blank")}
         className="flex-1"
       >
         Live
-      </Button>
+      </Button>,
     );
   }
 
@@ -194,11 +212,11 @@ const DefaultProjectFooter: React.FC<{
         key="demo"
         variant="outline"
         size="sm"
-        onClick={() => window.open(project.demoUrl, '_blank')}
+        onClick={() => window.open(project.demoUrl, "_blank")}
         className="flex-1"
       >
         Live Demo
-      </Button>
+      </Button>,
     );
   }
 
@@ -208,15 +226,19 @@ const DefaultProjectFooter: React.FC<{
         key="github"
         variant="outline"
         size="sm"
-        onClick={() => window.open(project.githubUrl, '_blank')}
+        onClick={() => window.open(project.githubUrl, "_blank")}
         className="flex-1"
       >
         GitHub
-      </Button>
+      </Button>,
     );
   }
 
-  if (project.interactiveComponentDemo && project.component && onDemoOpen) {
+  if (
+    project.interactiveComponentDemo &&
+    project.component &&
+    onDemoOpen
+  ) {
     buttons.push(
       <Button
         key="interactive"
@@ -226,39 +248,39 @@ const DefaultProjectFooter: React.FC<{
         className="flex-1"
       >
         Interactive Demo
-      </Button>
+      </Button>,
     );
   }
 
   return <>{buttons}</>;
 };
 
-// Carousel component for multiple screenshots
 const ProjectCarousel: React.FC<{
-  project: ProjectCardProps['project'];
+  project: ProjectCardProps["project"];
   onImageClick?: (imageSrc: string) => void;
 }> = ({ project, onImageClick }) => {
-
   return (
     <div className="relative group">
       <Carousel className="w-full">
         <CarouselContent>
           {project.screenshots!.map((src, i) => (
-            <CarouselItem key={i} className="flex items-center justify-center h-48 rounded-lg overflow-hidden relative">
-              <img 
-                src={src} 
-                alt={`${project.title} screenshot ${i+1}`} 
-                className="object-contain w-full h-full cursor-zoom-in hover:scale-105 transition-all duration-300 ease-out" 
+            <CarouselItem
+              key={i}
+              className="flex items-center justify-center h-48 rounded-lg overflow-hidden relative"
+            >
+              <img
+                src={src}
+                alt={`${project.title} screenshot ${i + 1}`}
+                className="object-contain w-full h-full cursor-zoom-in hover:scale-105 transition-all duration-300 ease-out"
                 style={{
-                  maxHeight: '100%',
-                  maxWidth: '100%',
-                  width: 'auto',
-                  height: 'auto'
+                  maxHeight: "100%",
+                  maxWidth: "100%",
+                  width: "auto",
+                  height: "auto",
                 }}
                 onClick={() => onImageClick?.(src)}
               />
-                      {/* Subtle hover overlay */}
-        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 pointer-events-none"></div>
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 pointer-events-none" />
             </CarouselItem>
           ))}
         </CarouselContent>
@@ -267,4 +289,4 @@ const ProjectCarousel: React.FC<{
       </Carousel>
     </div>
   );
-}; 
+};
