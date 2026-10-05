@@ -1,5 +1,3 @@
-import { UniqueButton } from "./demo_components/UniqueButton";
-
 interface Project {
   id: number;
   title: string;
@@ -8,36 +6,91 @@ interface Project {
   technologies: string[];
   isLive: boolean;
   isGithub: boolean;
-  liveUrl: string;
-  githubUrl: string;
+  liveUrl?: string;
+  githubUrl?: string;
   date?: string;
   screenshots?: string[];
   carousel?: boolean;
-  interactiveComponent?: boolean;
-  component?: React.ComponentType;
   interactiveDemo?: boolean;
-  interactiveComponentDemo?: boolean;
   demoUrl?: string;
   isFeatured: boolean;
   isFrontendFeatured: boolean;
   isBackendFeatured: boolean;
 }
 
-// Featured Projects
 export const allProjects: Project[] = [
   {
     id: 1,
-    title: "Caloric Tracker",
-    description: "A web app that tracks your caloric intake and helps you reach your fitness goals. Built with React, TypeScript, and Tailwind CSS.",
-    shortDescription: "A web app that tracks your caloric intake and helps you reach your fitness goals. Built with React, TypeScript, and Tailwind CSS.",
-    technologies: ["React", "TypeScript", "Tailwind CSS", "Vite", "PostgreSQL"],
+    title: "Daurham Health",
+    description:
+      "A personal health intelligence platform that brings nutrition, training, body measurements, activity, sleep, supplements, progress, experiments, and benchmark results into one system. It includes structured provider ingestion, explicit data provenance, immutable result history, backups, tests, and an anonymous read-only demo surface.",
+    shortDescription:
+      "A full-stack personal health intelligence platform for nutrition, training, sleep, activity, experiments, and longitudinal progress.",
+    technologies: [
+      "React",
+      "TypeScript",
+      "PostgreSQL",
+      "Vercel",
+      "Gemini",
+      "Vitest",
+    ],
+    isLive: false,
+    isGithub: true,
+    githubUrl: "https://github.com/daurham/daurham-health",
+    date: "2026-09-22",
+    screenshots: [],
+    carousel: false,
+    interactiveDemo: false,
+    isFeatured: true,
+    isFrontendFeatured: true,
+    isBackendFeatured: true,
+  },
+  {
+    id: 2,
+    title: "Home Dashboard",
+    description:
+      "A household operations dashboard designed for a wall-mounted kiosk and everyday use. It combines finance workflows, safe-to-spend budgeting, savings and debt views, calendar information, home status, and integrations with self-hosted services in a responsive modular interface.",
+    shortDescription:
+      "A modular household operations dashboard combining finance, planning, home status, and self-hosted services.",
+    technologies: [
+      "React",
+      "TypeScript",
+      "PostgreSQL",
+      "Plaid",
+      "Recharts",
+      "Docker",
+    ],
+    isLive: false,
+    isGithub: true,
+    githubUrl: "https://github.com/daurham/home-dashboard",
+    date: "2026-09-28",
+    screenshots: [],
+    carousel: false,
+    interactiveDemo: false,
+    isFeatured: true,
+    isFrontendFeatured: true,
+    isBackendFeatured: true,
+  },
+  {
+    id: 3,
+    title: "Calorie & Macro Tracker",
+    description:
+      "A production nutrition tracker built around fast daily logging. It combines a personal food catalog with USDA references, barcode lookup, nutrition-label capture, AI-assisted food estimation, reusable meals, macro goals, and PostgreSQL-backed history while keeping AI usage controlled and cacheable.",
+    shortDescription:
+      "A production nutrition tracker with fast logging, barcode lookup, label capture, AI-assisted estimates, and PostgreSQL-backed history.",
+    technologies: [
+      "React",
+      "TypeScript",
+      "PostgreSQL",
+      "Gemini",
+      "Vercel",
+      "ZXing",
+    ],
     isLive: true,
     isGithub: true,
     liveUrl: "https://calorie-tracker-henna.vercel.app/",
     githubUrl: "https://github.com/daurham/calorie-tracker",
-    date: "2024-02-10",
-    interactiveDemo: false,
-    component: null,
+    date: "2026-10-03",
     screenshots: [
       "/screenshots/calorie_tracker_4.png",
       "/screenshots/calorie_tracker_1.png",
@@ -45,44 +98,58 @@ export const allProjects: Project[] = [
       "/screenshots/calorie_tracker_3.png",
     ],
     carousel: true,
+    interactiveDemo: false,
     isFeatured: true,
     isFrontendFeatured: true,
-    isBackendFeatured: false,
+    isBackendFeatured: true,
   },
   {
-    id: 2,
-    title: "iPhone SMS Transcriptor",
-    description: "A desktop app that extracts SMS messages from iPhone backups and converts them into TXT, CSV, or JSON files—saved directly to your desktop. Preserve meaningful conversations, memories, and important exchanges in an organized format. Supports multiple export formats and advanced filtering.",
-    shortDescription: "A desktop app that extracts SMS messages from iPhone backups and converts them into TXT, CSV, or JSON files—saved directly to your desktop. Preserve meaningful conversations, memories, and important exchanges in an organized format.",
-    technologies: ["Windows", "Flutter", "Dart", "SQLite"],
+    id: 4,
+    title: "Home AI",
+    description:
+      "A self-hosted AI API running in Docker with Ollama-backed local models. It exposes authenticated endpoints for general AI, home-assistant workflows, nutrition/vision tasks, streaming responses, latency monitoring, and structured workout transcription while starting automatically as a Linux service.",
+    shortDescription:
+      "A Dockerized local AI API with authenticated Ollama endpoints, vision workflows, streaming, and Linux service automation.",
+    technologies: [
+      "Node.js",
+      "Express",
+      "Docker",
+      "Ollama",
+      "Linux",
+      "Systemd",
+    ],
     isLive: false,
     isGithub: true,
-    liveUrl: null,
-    githubUrl: "https://github.com/daurham/iphone_sms_transcriptor",
-    date: "2023-11-01",
-    screenshots: [
-      // "/screenshots/iphone_sms_1.png",
-    ],
+    githubUrl: "https://github.com/daurham/home-ai",
+    date: "2026-09-20",
+    screenshots: [],
     carousel: false,
     interactiveDemo: false,
-    component: null,
     isFeatured: true,
     isFrontendFeatured: false,
-    isBackendFeatured: false,
+    isBackendFeatured: true,
   },
   {
-    id: 3,
+    id: 5,
     title: "PiRoutine",
-    description: "A full-stack alarm system connecting an AWS EC2 client to a Raspberry Pi server with a relay switched water pump. It prompts users to wake up for a morning run, or else the bed gets soaked. Features a web dashboard and real-time notifications.",
-    shortDescription: "A full-stack alarm system connecting an AWS EC2 client to a Raspberry Pi server with a relay switched water pump. It prompts users to wake up for a morning run, or else the bed gets soaked. Features a web dashboard and real-time notifications.",
-    technologies: ["TypeScript", "React", "Node.js", "Express", "MySQL", "AWS", "Raspberry Pi"],
+    description:
+      "A full-stack alarm system connecting an AWS-hosted web client to a Raspberry Pi and relay-switched water pump. It turns a morning routine into a real hardware consequence, combining web UX, APIs, cloud deployment, and physical-device control.",
+    shortDescription:
+      "A full-stack alarm system connecting an AWS web client to a Raspberry Pi and relay-controlled water pump.",
+    technologies: [
+      "TypeScript",
+      "React",
+      "Node.js",
+      "Express",
+      "MySQL",
+      "AWS",
+      "Raspberry Pi",
+    ],
     isLive: false,
     isGithub: true,
-    liveUrl: null,
     githubUrl: "https://github.com/daurham/PiRoutine-EC2-Client",
     date: "2022-06-15",
     interactiveDemo: true,
-    component: null,
     demoUrl: "https://piroutine-demo.vercel.app/",
     carousel: true,
     screenshots: [
@@ -91,82 +158,60 @@ export const allProjects: Project[] = [
       "/screenshots/piroutine_2.png",
       "/screenshots/piroutine_4.png",
     ],
-    isFeatured: true,
+    isFeatured: false,
     isFrontendFeatured: true,
     isBackendFeatured: false,
   },
   {
-    id: 4,
-    title: "PiRoutine",
-    description: "A full-stack alarm system connecting an AWS EC2 client to a Raspberry Pi server with a relay switched water pump. It prompts users to wake up for a morning run, or else the bed gets soaked. Features a web dashboard and real-time notifications.",
-    shortDescription: "A full-stack alarm system connecting an AWS EC2 client to a Raspberry Pi server with a relay switched water pump. It prompts users to wake up for a morning run, or else the bed gets soaked. Features a web dashboard and real-time notifications.",
-    technologies: ["TypeScript", "React", "Node.js", "Express", "MySQL", "AWS", "Raspberry Pi"],
+    id: 6,
+    title: "PiRoutine API & Pi Server",
+    description:
+      "The backend and Raspberry Pi side of PiRoutine, handling the application workflow that connects the cloud-hosted client to the physical alarm hardware.",
+    shortDescription:
+      "The backend and Raspberry Pi service layer behind the PiRoutine hardware alarm system.",
+    technologies: ["Node.js", "Express", "MySQL", "AWS", "Raspberry Pi"],
     isLive: false,
     isGithub: true,
-    liveUrl: null,
     githubUrl: "https://github.com/daurham/PiRoutine-Pi-Server",
     date: "2022-06-15",
-    interactiveDemo: true,
-    component: null,
-    demoUrl: "https://piroutine-demo.vercel.app/",
+    screenshots: [],
+    carousel: false,
+    interactiveDemo: false,
     isFeatured: false,
     isFrontendFeatured: false,
     isBackendFeatured: true,
   },
-  // {
-  //   id: 5,
-  //   title: "Daurham.com",
-  //   description: "My personal website built with React, Tailwind CSS, and TypeScript. Features a beautiful, interactive portfolio and blog. Includes dark mode and custom animations.",
-  //   shortDescription: "My personal website built with React, Tailwind CSS, and TypeScript. Features a beautiful, interactive portfolio and blog. Includes dark mode and custom animations.",
-  //   technologies: ["React", "TypeScript", "Tailwind CSS", "Shadcn UI"],
-  //   isLive: true,
-  //   isGithub: true,
-  //   liveUrl: "https://daurham.com",
-  //   githubUrl: "https://github.com/daurham/daurham.com",
-  //   date: "2024-04-01",
-  //   carousel: false,
-  //   interactiveDemo: false,
-  //   component: null,
-  //   isFeatured: true,
-  //   isFrontendFeatured: true,
-  //   isBackendFeatured: false,
-  // },
   {
-    id: 6,
-    title: "AI Disk Cleanup",
-    description: "A desktop app that cleans up your disk by deleting unnecessary files and freeing up space. Built with Flutter and Dart.",
-    shortDescription: "A desktop app that cleans up your disk by deleting unnecessary files and freeing up space. Built with Flutter and Dart.",
-    technologies: ["Windows", "Flutter", "Dart", "SQLite"],
+    id: 7,
+    title: "iPhone SMS Transcriptor",
+    description:
+      "A Flutter desktop utility that reads iPhone backup data and exports message history into portable text, CSV, or JSON files with filtering and local processing.",
+    shortDescription:
+      "A Flutter desktop utility that turns iPhone backup message data into portable exports.",
+    technologies: ["Flutter", "Dart", "SQLite", "Windows"],
     isLive: false,
     isGithub: true,
-    liveUrl: null,
-    githubUrl: "https://github.com/daurham/ai_disk_cleanup",
-    date: "2024-02-10",
+    githubUrl: "https://github.com/daurham/iphone_sms_transcriptor",
+    date: "2024-01-01",
+    screenshots: [],
+    carousel: false,
     interactiveDemo: false,
-    component: null,
-    screenshots: [
-      "/screenshots/ai_disk_cleanup_1.png",
-      "/screenshots/ai_disk_cleanup_2.png",
-      "/screenshots/ai_disk_cleanup_3.png"
-    ],
-    carousel: true,
     isFeatured: false,
     isFrontendFeatured: false,
     isBackendFeatured: false,
   },
   {
-    id: 7,
+    id: 8,
     title: "Book Manager",
-    description: "A take home assignment that demonstatied my application creation skills. I was given two wireframes and 24 hours to build a book manager from scratch that demonstrated adding books, editing them and state management. Built with React, TypeScript, Tailwind CSS, and Redux.",
-    shortDescription: "A take home assignment that demonstatied my application creation skills. I was given two wireframes and 24 hours to build from scratch. Built with React, TypeScript, and Tailwind CSS.",
+    description:
+      "A time-boxed take-home project built from two wireframes in 24 hours. It demonstrates state management, responsive product UI, adding and editing books, and translating sparse requirements into a polished application.",
+    shortDescription:
+      "A 24-hour take-home build demonstrating responsive UI, state management, and product execution from wireframes.",
     technologies: ["React", "TypeScript", "Redux", "Tailwind CSS"],
     isLive: true,
     isGithub: false,
-    githubUrl: "https://github.com/daurham/book-manager",
     liveUrl: "https://book-manager-ashy.vercel.app/",
     date: "2025-06-17",
-    interactiveComponent: false,
-    component: null,
     screenshots: [
       "/screenshots/book_manager_1.png",
       "/screenshots/book_manager_2.png",
@@ -177,88 +222,44 @@ export const allProjects: Project[] = [
     isFrontendFeatured: true,
     isBackendFeatured: false,
   },
-  // {
-  //   id: 7,
-  //   title: "Fitness Tracker",
-  //   description: "A web app that tracks your fitness progress and helps you reach your goals. Built with React, TypeScript, and Tailwind CSS.",
-  //   shortDescription: "A web app that tracks your fitness progress and helps you reach your goals. Built with React, TypeScript, and Tailwind CSS.",
-  //   technologies: ["React", "TypeScript", "CSS Animations"],
-  //   isLive: true,
-  //   isGithub: true,
-  //   githubUrl: "https://github.com/daurham/jakes-fitness-tracker",
-  //   liveUrl: "https://jakes-fitness-tracker.vercel.app/",
-  //   date: "2024-05-05",
-  //   interactiveComponent: false,
-  //   component: null,
-  //   screenshots: null,
-  //   carousel: false,
-  //   interactiveDemo: false,
-  //   isFeatured: false,
-  //   isFrontendFeatured: true,
-  //   isBackendFeatured: false,
-  // },
-  // Dummy project with a long description
-  {
-    id: 8,
-    title: "PhotoSnap Carousel",
-    description: "A responsive photo carousel component with touch and keyboard navigation. Supports lazy loading, custom transitions, and accessibility features. Designed for seamless integration into any React project, with a focus on performance and user experience. Includes a variety of themes and configuration options for developers.",
-    shortDescription: "A responsive photo carousel component with touch and keyboard navigation. Supports lazy loading, custom transitions, and accessibility features. Designed for seamless integration into any React project, with a focus on performance and user experience. Includes a variety of themes and configuration options for developers.",
-    technologies: ["React", "TypeScript", "Framer Motion"],
-    isLive: true,
-    isGithub: true,
-    liveUrl: "https://photosnap-carousel.com",
-    githubUrl: "https://github.com/daurham/photosnap-carousel",
-    date: "2023-09-20",
-    interactiveDemo: false,
-    component: null,
-    screenshots: [
-      "/screenshots/photosnap_1.png",
-      "/screenshots/photosnap_2.png",
-      "/screenshots/photosnap_3.png"
-    ],
-    carousel: true,
-    isFeatured: false,
-    isFrontendFeatured: false,
-    isBackendFeatured: false,
-  },
   {
     id: 9,
-    title: "Toolbox",
-    description: "A comprehensive command-line toolbox that provides essential utilities for file management, system operations, and development tasks. Built with pure Bash for maximum compatibility and performance. Includes tools like create, delete, update, read, compress, extract, find, run, and more.",
-    shortDescription: "A comprehensive command-line toolbox that provides essential utilities for file management, system operations, and development tasks. Built with pure Bash for maximum compatibility and performance.",
-    technologies: ["Bash"],
-    isLive: false,
-    isGithub: true,
-    liveUrl: null,
-    githubUrl: "https://github.com/daurham/toolbox",
-    date: "2025-07-31",
-    interactiveDemo: false,
-    component: null,
-    screenshots: [
-    ],
-    carousel: false,
-    isFeatured: false,
-    isFrontendFeatured: false,
-    isBackendFeatured: true,
-  },
-  // https://github.com/daurham/job_prompt_helper
-  {
-    id: 10,
     title: "Job Prompt Helper",
-    description: "A Chrome extension that helps job seekers quickly access and copy their personalized job application responses and personal information with a persistent floating panel.",
-    shortDescription: "A Chrome extension that helps job seekers quickly access and copy their personalized job application responses and personal information with a persistent floating panel.",
-    technologies: ["JavaScript", "HTML", "CSS"],
+    description:
+      "A Chrome extension that keeps reusable job-application responses and personal details one click away in a persistent floating panel, reducing repetitive form work.",
+    shortDescription:
+      "A Chrome extension for quickly reusing job-application responses and personal information.",
+    technologies: ["JavaScript", "HTML", "CSS", "Chrome Extensions"],
     isLive: true,
     isGithub: true,
-    liveUrl: "https://chromewebstore.google.com/detail/job-prompt-helper/beihennhbehhjhgeoiolckbpioogjlje?hl=en-US&utm_source=ext_sidebar",
+    liveUrl:
+      "https://chromewebstore.google.com/detail/job-prompt-helper/beihennhbehhjhgeoiolckbpioogjlje",
     githubUrl: "https://github.com/daurham/job_prompt_helper",
     date: "2025-07-31",
-    interactiveDemo: false,
-    component: null,
     screenshots: [],
     carousel: false,
+    interactiveDemo: false,
     isFeatured: false,
     isFrontendFeatured: true,
     isBackendFeatured: false,
+  },
+  {
+    id: 10,
+    title: "Toolbox",
+    description:
+      "A Bash command-line toolbox for common file, archive, search, and development operations, built as a lightweight collection of reusable terminal utilities.",
+    shortDescription:
+      "A Bash toolbox for reusable file, archive, search, and development operations.",
+    technologies: ["Bash", "Linux", "CLI"],
+    isLive: false,
+    isGithub: true,
+    githubUrl: "https://github.com/daurham/toolbox",
+    date: "2025-07-31",
+    screenshots: [],
+    carousel: false,
+    interactiveDemo: false,
+    isFeatured: false,
+    isFrontendFeatured: false,
+    isBackendFeatured: true,
   },
 ];
